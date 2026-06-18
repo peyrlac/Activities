@@ -225,10 +225,9 @@ presence.on('UpdateData', async () => {
             presenceData.smallImageText = strings.privacy
           }
           else {
-            
             const buttonsSelector = '[class*=ActionButton] > div > span'
             if (!exist(buttonsSelector))
-              document.onload = () => console.warn('Buttons not found, presence may need update to fit the new website design')
+              console.warn('Buttons not found, presence may need update to fit the new website design')
 
             const buttons = document.querySelectorAll(buttonsSelector)
             if (document.querySelector('[class*=AdBreakStats] > span')) {
@@ -320,7 +319,7 @@ presence.on('UpdateData', async () => {
                 )
               }
               else {
-                document.onload = () => console.warn('Timestamps not found, presence may need update to fit the new website design')
+                console.warn('Timestamps not found, presence may need update to fit the new website design')
               }
             }
 
@@ -348,7 +347,6 @@ presence.on('UpdateData', async () => {
               slideshow.addSlide('poster-image', presenceDataPoster, 5000)
               slideshow.addSlide('channel-image', presenceData, 5000)
             }
-
           }
           break
         }
